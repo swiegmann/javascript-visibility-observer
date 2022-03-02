@@ -24,18 +24,18 @@ Where it *cannot* help you:
 
 ### Download
 
-Download and copy this repository to `/site/plugins/visibility-observer`.
+Download and unzip to your prefered folder.
 
 ### Git submodule
 
 ```
-git submodule add https://github.com/swiegmann/visibility-observer.git
+git submodule add https://github.com/swiegmann/javascript-visibility-observer.git
 ```
 
 ### Composer
 
 ```
-composer require swiegmann/visibility-observer
+composer require swiegmann/javascript-visibility-observer
 ```
 
 
@@ -50,8 +50,6 @@ var observer = new visibilityObserver({
 	}
 });
 ```
-
-This will log visibility results to console by default.
 
 
 
