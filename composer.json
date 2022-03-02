@@ -1,0 +1,9 @@
+{
+  "name": "swiegmann/javascript-visibility-observer",
+  "description": "Observe HTML element visibility",
+  "license": "MIT",
+  "authors": [{
+    "name": "S.Wiegmann"
+  }],
+  "type": "javascript"
+}

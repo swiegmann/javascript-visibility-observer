@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-debug="true">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0">
+    <style>
+      body { margin: 0; }
+      body > p { margin-bottom: 102vh; }
+      h1, h2, p { margin: 0; padding: 1.5rem 2rem; }
+      footer { background-color: #000000; color: #ffffff; transition: opacity 3s linear; }
+    </style>
+    <!--
+      This is the implementation {{
+    -->
+    <script src="../src/visibility-observer.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) {
+        var observer = new visibilityObserver({
+        	el: document.querySelector("footer"),
+          callback: function(b) {
+            console.log('visibility: ' + b);
+            this.el.style.opacity = b ? 1 : 0.1;
+          }
+        });
+      });
+    </script>
+    <!--
+      }} This is the implementation
+    -->
+  </head>
+  <body>
+    <h1>Visibility Observer</h1>
+    <p>
+      The visibility of the footer on the bottom of the page is observed and a callback is triggered on changes.<br>
+      <br>
+      <br>
+      Scroll down slowly.<br>
+      <br>
+      <br>
+      Also<br>
+      - focus another window (to "un-focus" the browser)<br>
+      - switch to other tabs to observe changes (Note: your browser might disable transitions for background-tabs).<br>
+      <br>
+      See the console for debugging.
+    </p>
+    <footer>
+      <h2>Footer</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      </p>
+    </footer>
+  </body>
+</html>
