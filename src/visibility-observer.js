@@ -355,11 +355,14 @@ class visibilityObserver {
     } else {
       if (options && options.dkDebounce) {
         // w/ debounce
-        var t;
-        el.addEventListener(type, function() {
-          if (t) clearTimeout(t);
-          t = setTimeout(fn, options.dkDebounce);
-        }, options);
+        var debounce = function(fn) {
+          var t;
+          return function(e) {
+            if (t) clearTimeout(t);
+            t = setTimeout(fn, options.dkDebounce);
+          }
+        }
+        el.addEventListener(type, debounce(fn), options);
       } else if (options && options.dkRequestIdleCallback) {
         // w/ RequestIdleCallback
         el.addEventListener(type, function() {
