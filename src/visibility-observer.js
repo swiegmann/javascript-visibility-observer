@@ -62,7 +62,7 @@ class visibilityObserver {
 
 
   startObserve() {
-    if (this.data.observing) return;
+    if (this.data.observing) return false;
 
 
     //
@@ -138,11 +138,14 @@ class visibilityObserver {
 
 
     this.data.observing = true;
+
+
+    return true;
   }
 
 
   stopObserve() {
-    if (!this.data.observing) false;
+    if (!this.data.observing) return false;
 
 
     // Remove document focus handler
@@ -158,6 +161,9 @@ class visibilityObserver {
 
 
     this.data.observing = false;
+
+
+    return true;
   }
 
 
